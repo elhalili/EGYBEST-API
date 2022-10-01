@@ -13,12 +13,12 @@ async function Seasons(name, type) {
 
     const seasonsList = await page.evaluate(() => {
         let data = [];
-        let list = document.querySelectorAll('.movie');
+        let list = document.querySelector('.movies_small').children;
 
         for (let i = 0; i < list.length; i++) {
             data.push({
                 url: `/api/@@/season/` + list[i].href.split('/season/')[1],
-                image: list[0].firstChild.src
+                image: list[i].firstChild.src
             });
         };
 
