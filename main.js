@@ -10,12 +10,12 @@ app.use('/api/series/', require('./routes/serie/'));
 app.use('/api/anime/', require('./routes/anime/'));
 
 
-app.use((req, res) => {
+app.get('/', (req, res) => {
     console.log('API: bad request');
 
     res
         .status(400)
-        .json('{"msg": "bad request"}');
+        .json({msg: "bad request"});
 });
 
 app.listen(PORT, () => {
