@@ -1,9 +1,6 @@
 const express = require('express');
-const dotenv = require('dotenv');
 
 const PORT = process.env.PORT | 1000;
-
-dotenv.config();
 
 const app = express();
 
@@ -14,11 +11,13 @@ app.use('/api/anime/', require('./routes/anime/'));
 
 
 app.use((req, res) => {
+    console.log('API: bad request');
+
     res
         .status(400)
         .json('{"msg": "bad request"}');
 });
 
 app.listen(PORT, () => {
-    console.log(`The TV API is running at http://127.0.0.1:${PORT}`);
+    console.log(`The API is running at PORT ${PORT}`);
 });
