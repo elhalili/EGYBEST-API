@@ -1,8 +1,13 @@
 const express = require('express');
+const cors = require("cors");
 
 const PORT = process.env.PORT | 1000;
 
 const app = express();
+
+app.use(cors({
+    origin: '*'
+}));
 
 app.use('/api/auto-complete/', require('./routes/auto-complete/'));
 app.use('/api/movie/', require('./routes/movie/'));
