@@ -8,13 +8,14 @@ async function Episode(name, type) {
 
 
     await page.goto('https://jano.egybest.promo/' + type + '/' + name, {
-        waitUntil: "domcontentloaded",
+        waitUntil: "load",
     });
     console.log('https://jano.egybest.promo/' + type + '/' + name);
     await new Promise(r => setTimeout(r, 1000));
 
     // Get iframe url
     const watchUrl = await page.evaluate(() => {
+
         return document.querySelector('iframe').src;
     });
     console.log(watchUrl);
