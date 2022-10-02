@@ -7,7 +7,9 @@ async function Episode(name, type) {
     page.on('console', msg => console.log('PAGE LOG:', msg.text()));
 
 
-    await page.goto('https://jano.egybest.promo/' + type + '/' + name);
+    await page.goto('https://jano.egybest.promo/' + type + '/' + name, {
+        waitUntil: "domcontentloaded",
+    });
     console.log('https://jano.egybest.promo/' + type + '/' + name);
     await new Promise(r => setTimeout(r, 1000));
 
