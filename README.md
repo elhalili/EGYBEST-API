@@ -1,10 +1,4 @@
-# Egybest API
-
-Created: October 1, 2022 1:40 PM
-Last Edited Time: October 1, 2022 1:49 PM
-
 # Unofficial Egybest  API
-
 
 This is an official API which is built using puppeteer
 
