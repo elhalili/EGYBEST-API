@@ -5,13 +5,10 @@ Last Edited Time: October 1, 2022 1:49 PM
 
 # Unofficial Egybest  API
 
----
 
 This is an official API which is built using puppeteer
 
 # Docs
-
----
 
 /api/auto-complete/{search} ⇒ {u: URL, i: ICON}
 
